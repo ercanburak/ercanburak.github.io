@@ -1,0 +1,330 @@
+body {
+    background-color: #fff;
+    font-family: "Arvo", serif;
+    /*font-family: "Lato", Verdana, Helvetica, sans-serif;*/
+    color: #1a1a1a;
+    font-size: 11pt;
+    line-height: 1.8em;
+    text-align: justify;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #0505af;
+}
+.header {
+    padding: 12px 0px 12px 0px;
+    margin: 0px 0px 12px 0px;
+    border-bottom: 2px solid #999;
+    background: #eee;
+    position: sticky;
+    top: 0px;
+}
+.myname {
+    display: inline-block;
+    font-size: 18pt;
+    width: 50%;
+}
+.myname a {
+    font-size: 18pt;
+    color: #1a1a1a;
+    width: 50%;
+}
+.menu {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.menu li {
+    display: inline-block;
+    font-size: 14pt;
+}
+.menu li a {
+    color: #414446;
+}
+.menu li:after {
+    content: "•";
+    margin: 0px 10px 0px 10px;
+}
+.menu li:last-child:after {
+    content: "";
+}
+.section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 4px 0px 4px;
+}
+.section > .title {
+    font-size: 18pt;
+    color: #414446;
+    clear: both;
+}
+.section > .title > span {
+    /*border-bottom: 1px solid #313436;*/
+    border-bottom: 2px solid #999;
+    padding-bottom: 0.1em;
+    padding-right: 15px;
+    margin-bottom: 3.8em;
+}
+.section > .row {
+    clear: both;
+}
+.section .content {
+    margin-bottom: 2em;
+}
+.section .image img {
+    width: 100%;
+    padding-top: 8px;
+}
+#profile-photo {
+    padding-top: 0px;
+}
+#profile-photo img {
+    border-radius: 30px;
+}
+.row_paper {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+/**
+ * Styling for the publication list
+ */
+.paper-title {
+    padding-top: 2.5%;
+    font-size: 11pt;
+    color: #818181;
+}
+.paper-title a {color: #000;}
+.paper-title a:hover {color: #777;}
+.paper .links {text-align: left;}
+.paper .links a:first-child { margin-left: 0px; }
+.paper .links a {
+    display: inline-block;
+    width: 90px;
+    margin-right: 5px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    padding: 1px 6px;
+    background-color: #0081af;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.paper .links a:hover {
+    pointer: cursor;
+    color: #1A2B7E;
+    font-weight: bold;
+}
+
+.paper .links a[data-type="Abstract"] {
+    background-color: #f0ad4e;
+}
+.paper .links a[data-type="Project page"] {
+    background-color: #daa6f7;
+    width: 110px;
+}
+.paper .links a[data-type="Paper"] {
+    background-color: #4a5759;
+}
+.paper .links a[data-type="Code"] {
+    background-color: #edafb8;
+}
+.paper .links a[data-type="Blog"] {
+    background-color: #06d6a0;
+}
+.paper .links a[data-type="Slides"] {
+    background-color: #581845;
+}
+.paper .links a[data-type="Video"] {
+    background-color: #c3423f;
+}
+.paper .links a[data-type="Podcast"] {
+    background-color: #9b6d99;
+}
+.paper .links a[data-type="Poster"] {
+    background-color: #7ebc89;
+}
+.paper .links a[data-type="Bibtex"] {
+    background-color: #0081af;
+}
+.paper .links .link-content {
+    display: none;
+    font-style: italic;
+    margin-top: 10px;
+}
+.paper .links .link-content > pre {
+    font-style: normal;
+    line-height: 1.2em;
+}
+
+.paper .authors .author:first-child {
+    padding-left: 0px;
+    font-size: 11pt;
+}
+.paper .authors .author {
+    padding-left: 7px;
+}
+.paper .authors a {
+    color: #555;
+}
+.paper .authors a:hover{
+    text-decoration: underline;
+}
+
+.paper .conference {
+    font-size: 11pt;
+    padding-bottom: 15px;
+}
+
+.paper .conference .special {
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 12pt;
+    padding-bottom: 15px;
+}
+
+/**
+ * Styling for the news list
+ */
+.news_item {
+    padding-bottom: 25px;
+    padding-left: 25px;
+    text-align: left;
+}
+.news_item .ul {list-style-type: square;}
+.news-date {font-weight: bold;}
+
+.news-text {
+    color: #1a1a1a;
+    padding-left:5px;
+}
+
+/**
+ * Styling for presentation list
+ */
+.presentation-title {
+    padding-top: 2.5%;
+    font-size: 13pt;
+}
+.presentation-title a {color: #000;}
+.presentation-title a:hover {color: #777; text-decoration: underline}
+
+.presentation .details {
+    font-size: 12pt;
+    padding-bottom: 15px;
+}
+
+/**
+ * Styling for the presentations page
+ */
+.talks {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px 4px 0px 4px;
+}
+.presentation-title {
+    padding-top: 2.5%;
+    padding-bottom: 10px;
+    font-size: 14pt;
+}
+.paper .location {
+    font-size: 12pt;
+    padding-bottom: 15px;
+    padding-top:10px;
+}
+.paper .location .special {
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 12pt;
+    padding-bottom: 15px;
+}
+.talks .links a {
+    display: inline-block;
+    width: 70px;
+    margin-right: 5px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    padding: 1px 6px;
+    background-color: #0081af;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+}
+.talks .links a[data-type="Slides"] {
+    background-color: #ffffff;
+}
+.talks .links a[data-type="Video"] {
+    background-color: #ffffff;
+}
+
+.year_divider {
+    width: 900px;
+    padding: 12px 0px 12px 0px;
+    margin: 0px 0px 12px 0px;
+    border-bottom: 3px outset #999;
+    background: #fff;
+}
+.year_divider span {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    font-size: 20pt;
+}
+
+/**
+ * Styling for the font icons
+ */
+.ai-2x {font-size: 2em;}
+
+/**
+ *  Conditional styles first for mobile (or generally narrow screens) and then
+ *  for the rest
+ */
+@media (max-width: 500px) {
+    .row > div {
+        float: none;
+    }
+    .section .content {
+        width: 90%;
+        margin: 0 auto 4em auto;
+    }
+    .section .image {
+        width: 80%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #profile-photo { padding-top: 20px; }
+    .myname {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .menu {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (min-width: 500px) {
+    .row > div {
+        float: left;
+    }
+    .section .content {
+        width: 70%;
+    }
+    .section .image {
+        width: 25%;
+        padding: 2.5%;
+    }
+}
