@@ -1,1 +1,225 @@
-Coming soon
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>HyperE2VID: Improving Event-based Video Reconstruction via Hypernetworks</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Burak Ercan">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="data/bunny.png"/>
+
+        <link rel="stylesheet" type="text/css" href="style_project_page.css?cache=7754391418498779889">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.min.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://unpkg.com/@glidejs/glide"></script>
+        <style>
+            .image-container {
+	            display: flex;
+	            flex-wrap: nowrap;
+	            justify-content: center;
+	            align-items: center;
+                object-fit: scale-down;
+            }
+            .image-container img {
+	            width: 200px;
+	            height: 180px;
+	            margin: 5px;
+	            flex: 2;
+            }
+            iframe {
+                display: block;
+                text-align: center;
+                border-style:none;
+            }
+        </style>
+
+
+        <style type="text/css">
+            .side-text {
+                width:60%;
+                display:inline-block;
+                vertical-align:top;
+            }
+            .side-image {
+                width: 38%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            .controls {
+                margin-bottom: 10px;
+            }
+            .left-controls {
+                display: inline-block;
+                vertical-align: top;
+                width: 80%;
+            }
+            .right-controls {
+                display: inline-block;
+                vertical-align: top;
+                width: 19%;
+                text-align: right;
+            }
+            .render_window {
+                display: inline-block;
+                vertical-align: middle;
+                box-shadow: 1px 0px 5px black;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                width: calc(33% - 10px);
+            }
+            .progress {
+                background: #666;
+                position: relative;
+                height: 5px;
+                margin-bottom: -5px;
+                display: none;
+            }
+            .glide__slide:hover {cursor: grab;}
+            .glide__slide:active {cursor: grabbing;}
+            .glide__slide img {width: 90%;}
+            .glide__bullets {
+                text-align: center;
+            }
+            .glide__bullet--active {
+                color: #aaa; 
+            }
+
+            @media (max-width: 400px) {
+                .render_window {
+                    display: block;
+                    width: 90%;
+                    margin: 10px auto;
+                }
+            }
+            @media (max-width: 700px) {
+                .side-image {
+                    display: block;
+                    width: 80%;
+                    margin: 10px auto;
+                }
+                .side-text {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="section">
+            <h1 class="project-title">
+                HyperE2VID: Improving Event-Based Video Reconstruction via Hypernetworks
+            </h1>
+            <div class="authors">
+                <a href=https://ercanburak.github.io/>
+                    Burak Ercan <sup>1,2</sup>
+                </a>
+                <a href=https://github.com/ekeronur/>
+                    Onur Eker <sup>1,2</sup>
+                </a>
+                <a href=https://github.com/CanberkSaglam/>
+                    Canberk Sağlam <sup>1,3</sup>
+                </a>
+                <a href=https://aykuterdem.github.io/>
+                    Aykut Erdem <sup>3,4</sup>
+                </a>
+                <a href=https://web.cs.hacettepe.edu.tr/~erkut/>
+                    Erkut Erdem <sup>1</sup>
+                </a>
+            </div>
+
+            <div class="affiliations">           
+                <span><sup>1</sup> <a href=https://cs.hacettepe.edu.tr> Hacettepe University, Computer Engineering Department</a></span> <br/>
+                <span><sup>2</sup> <a href=https://www.havelsan.com.tr/en> HAVELSAN Inc.</a></span>
+                <span><sup>3</sup> <a href=https://www.roketsan.com.tr/en>  ROKETSAN Inc.</a></span> <br/>
+                <span><sup>3</sup> <a href=https://cs.ku.edu.tr> Koç University, Computer Engineering Department</a></span>
+                <span><sup>4</sup> <a href=https://ai.ku.edu.tr> Koç University, KUIS AI Center</a></span> <br/>
+            </div>
+
+            <div class="project-conference">
+                <a href=https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83>Submitted to IEEE Transactions on Image Processing (TIP), 2023</a>                
+            </div>
+
+            <div class="project-icons">
+                <a href="https://arxiv.org/abs/2305.06382/">
+                    <i class="fa fa-file"></i> <br/>
+                    Paper
+                </a>
+                <a href="https://github.com/ercanburak/HyperE2VID/">
+                    <i class="fa fa-github"></i> <br/>
+                    Code
+                </a>
+            </div>
+
+            <div class="teaser-image">
+                <p class="content">Here we present <strong>HyperE2VID, a dynamic neural network architecture for event-based video reconstruction. </strong> 
+                Our approach extends existing static architectures by using <strong>hypernetworks</strong> and <strong>dynamic convolutions</strong> to generate <strong>per-pixel adaptive filters</strong> guided by a <strong>context fusion</strong> module that combines information from event voxel grids and previously reconstructed intensity images. We show that this dynamic architecture can generate <strong>higher-quality videos</strong> than previous state-of-the-art, <strong>while also reducing memory consumption and inference time</strong>. <br/> </p>
+                <figure style="width: 45%; margin: 3px;">
+                    <img class="fit-picture" src="projects/HyperE2VID/overview.png" style="width:100%;">
+                </figure>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <figure style="width: 50%; margin: 3px;">
+                    <img class="fit-picture" src="projects/HyperE2VID/comparison.png" style="width:100%;">
+                </figure>
+            </div>
+
+            <div class="section-title"> Approach Overview </div>
+            <div class="content">
+                <p>
+                    Since events are generated <strong>asynchronously only when the intensity of a pixel changes</strong>, the resulting event voxel grid is a <strong>sparse tensor</strong>, incorporating information only from the changing parts of the scene. The sparsity of these voxel grids is also <strong>highly varying</strong>. This makes it hard for neural networks to adapt to new data and leads to unsatisfactory video reconstructions that contain blur, low contrast, or smearing artifacts. Unlike the previous methods that try to process the highly varying event data with static networks in which the network parameters are kept fixed after training, our proposed model, HyperE2VID, employs a <strong>dynamic neural network architecture </strong>. Specifically, we enhance the main network (a convolutional encoder-decoder architecture similar to E2VID) by employing dynamic convolutions, whose parameters are generated via hypernetworks, dynamically at inference time.
+                </p>
+                <img src="projects/HyperE2VID/detailed.png" style="width:100%;">
+                <p> Some important aspects of our approach are:
+                </p>
+                <ul>
+                  <li>The dynamically generated parameters are also <strong>spatially varying</strong> such that there exists a separate convolutional kernel for each pixel, allowing them to adapt to different spatial locations as well as each input. This spatial adaptation enables the network to learn and use <strong>different filters for static and dynamic parts of the scene</strong> where events are generated at low and high rates, respectively.</li>
+                  <li> To avoid the high computational cost of generating per-pixel adaptive filters, we use two <strong>filter decomposition</strong> steps while generating per-pixel dynamic filters. First, we decompose filters into per-pixel filter atoms generated dynamically. Second, we further decompose each filter atom into <strong>pre-fixed multi-scale Fourier-Bessel bases</strong>.</li>
+                  <li>We guide the dynamic filter generation through a context that represents the current scene being observed. This context is obtained by <strong>fusing events and previously reconstructed images</strong>. These two modalities <strong>complement</strong> each other since intensity images capture static parts of the scene better, while events excel at dynamic parts. By fusing them, we obtain a context tensor that <strong>better represents both static and dynamic parts of the scene.</strong> </li>
+                  <li>We also employ a <strong>curriculum learning strategy</strong> to train the network more robustly, particularly in the early epochs of training when the reconstructed intensity images are far from optimal.
+                  </li>
+                </ul>
+                <p> For more details please see our <a href="https://arxiv.org/abs/2305.06382/">paper</a> .
+                </p>
+            </div>
+            <div class="section-title"> Results </div>
+            <div class="content">
+                <p>
+                    To evaluate our method, we utilize sequences from three real-world datasets, namely the <strong>Event Camera Dataset (ECD)</strong> dataset, the
+                    <strong>Multi Vehicle Stereo Event Camera (MVSEC)</strong> dataset and the <strong>High-Quality Frames (HQF)</strong> dataset.
+                    We evaluate the methods using three full-reference evaluation metrics, <strong>mean squared error (MSE)</strong>, <strong>structural similarity (SSIM)</strong>, 
+                    and <strong>learned perceptual image patch similarity (LPIPS)</strong> when high-quality, distortion-free ground truth frames are available. To assess image quality under 
+                    challenging scenarios, such as low light and fast motion, where ground truth frames are of low quality, we use a no-reference metric, <strong>BRISQUE</strong>.
+                </p>
+                <h3>Quantitative Results</h3>
+                <img src="projects/HyperE2VID/quantitative_results.png" style="width:100%;">
+                <h3>Qualitative Results</h3>
+                <iframe
+                src="https://ercanburak-event2im-results-analyzer-onli-cloud-demo-app-qo6o9p.streamlit.app/?embed=true"
+                height="500"
+                width="100%"
+                title="HyperE2VID Qualitative Comparisons"
+                ></iframe>
+            </div>
+            <div class="section">
+                <h4 class="title">
+                    BibTeX
+                </h4>
+                <p class="content">
+                    <pre><code>@inproceedings{ercan2023hypere2vid,
+title={{HyperE2VID}}: Improving Event-Based Video Reconstruction via Hypernetworks},
+author={Ercan, Burak and Eker, Onur and Saglam, Canberk and Erdem, Aykut and Erdem, Erkut},
+journal={arXiv preprint arXiv:2305.06382},
+year={2023}
+                    </code></pre>
+                </p>
+            <div class="section-title"> Acknowledgements </div>
+            <div class="content">
+                This work was supported in part by KUIS AI Center Research Award, TUBITAK-1001 Program Award No. 121E454, and BAGEP 2021 Award of the Science Academy to A. Erdem.
+            </div>
+        </div>
+
+    </body>
+</html>
