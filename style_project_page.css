@@ -250,7 +250,7 @@ video {
 pre {
     background-color: #eee;
     font-size: 14px;
-    white-space: pre;
+    white-space: pre-wrap;
     padding-left: 10px;
     padding-bottom: 5px;
     margin-top: 0px;
