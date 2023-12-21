@@ -126,17 +126,20 @@ a {
 }
 
 .paper .links a[data-type="Abstract"] {
-    background-color: #f0ad4e;
+    background-color: #dba400;
 }
 .paper .links a[data-type="Project page"] {
-    background-color: #daa6f7;
+    background-color: #144491;
     width: 110px;
 }
 .paper .links a[data-type="Paper"] {
-    background-color: #4a5759;
+    background-color: #b31b1b;
 }
 .paper .links a[data-type="Code"] {
-    background-color: #edafb8;
+    background-color: #24292e;
+}
+.paper .links a[data-type="Demo"] {
+    background-color: #f9d124;
 }
 .paper .links a[data-type="Blog"] {
     background-color: #06d6a0;
@@ -145,16 +148,16 @@ a {
     background-color: #581845;
 }
 .paper .links a[data-type="Video"] {
-    background-color: #c3423f;
+    background-color: #FF0000;
 }
 .paper .links a[data-type="Podcast"] {
     background-color: #9b6d99;
 }
 .paper .links a[data-type="Poster"] {
-    background-color: #7ebc89;
+    background-color: #4e91f5;
 }
 .paper .links a[data-type="Bibtex"] {
-    background-color: #0081af;
+    background-color: #56a248;
 }
 .paper .links .link-content {
     display: none;
