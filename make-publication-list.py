@@ -101,7 +101,7 @@ publications = [
          Link("Poster", "projects/evreal/poster.pdf", None, None),
          Link("Bibtex", None, None,
               """@inproceedings{ercan2023evreal,
-  title={EVREAL: Towards a Comprehensive Benchmark and Analysis Suite for Event-based Video Reconstruction},
+  title={{EVREAL}: Towards a Comprehensive Benchmark and Analysis Suite for Event-based Video Reconstruction},
   author={Ercan, Burak and Eker, Onur and Erdem, Aykut and Erdem, Erkut},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   pages={3942--3951},
