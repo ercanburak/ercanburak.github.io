@@ -59,6 +59,7 @@ conferences = {
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
     "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
     "tmlr": Conference("Transactions on Machine Learning Research (TMLR)"),
+    "tip": Conference("IEEE Transactions on Image Processing"),
     "pg": Conference("Pacific Graphics"),
     "arxiv": Conference("arXiv")
 }
@@ -68,10 +69,10 @@ publications = [
         "https://ercanburak.github.io/HyperE2VID.html",
         "projects/HyperE2VID/detailed.png",
         author_list(authors, "bercan", "oeker", "csaglam", "ae", "ee"),
-        conferences["arxiv"],
-        2023,
+        conferences["tip"],
+        2024,
         None,
-        [Link("Abstract", None, "Event-based cameras are becoming increasingly popular for their ability to capture high-speed motion with low latency and high dynamic range. However, generating videos from events remains challenging due to the highly sparse and varying nature of event data. To address this, in this study, we propose HyperE2VID, a dynamic neural anetwork architecture for event-based video reconstruction. Our approach uses hypernetworks to generate per-pixel adaptive filters guided by a context fusion module that combines information from event voxel grids and previously reconstructed intensity images. We also employ a curriculum learning strategy to train the network more robustly. Our comprehensive experimental evaluations across various benchmark datasets reveal that HyperE2VID not only surpasses current state-of-the-art methods in terms of reconstruction quality but also achieves this with fewer parameters, reduced computational requirements, and accelerated inference times.", None),
+        [Link("Abstract", None, "Event-based cameras are becoming increasingly popular for their ability to capture high-speed motion with low latency and high dynamic range. However, generating videos from events remains challenging due to the highly sparse and varying nature of event data. To address this, in this study, we propose HyperE2VID, a dynamic neural network architecture for event-based video reconstruction. Our approach uses hypernetworks to generate per-pixel adaptive filters guided by a context fusion module that combines information from event voxel grids and previously reconstructed intensity images. We also employ a curriculum learning strategy to train the network more robustly. Our comprehensive experimental evaluations across various benchmark datasets reveal that HyperE2VID not only surpasses current state-of-the-art methods in terms of reconstruction quality but also achieves this with fewer parameters, reduced computational requirements, and accelerated inference times.", None),
          Link("Project page", "HyperE2VID.html", None, None),
          Link("Paper", "https://arxiv.org/pdf/2305.06382.pdf", None, None),
          Link("Code", "https://github.com/ercanburak/HyperE2VID", None, None),
