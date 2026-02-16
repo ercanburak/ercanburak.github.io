@@ -88,6 +88,62 @@
                 color: #aaa; 
             }
 
+            .dataset-category {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                padding: 15px;
+                background: #f9f9f9;
+                border-radius: 8px;
+                border: 1px solid #eee;
+            }
+            .category-video {
+                flex: 0 0 55%;
+                margin-right: 20px;
+            }
+            .category-video video {
+                width: 100%;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            .category-info {
+                flex: 1;
+                word-break: keep-all;
+                overflow-wrap: normal;
+            }
+            .category-info h5 {
+                margin: 0 0 4px 0;
+                font-size: 1.2em;
+                font-family: 'Arvo', serif;
+            }
+            .category-stats {
+                font-size: 0.9em;
+                color: #666;
+                margin-bottom: 8px;
+            }
+            .category-info p {
+                margin: 0 0 10px 0;
+                font-size: 0.95em;
+            }
+            .category-download {
+                font-size: 0.9em;
+            }
+            .category-download a {
+                margin-right: 4px;
+            }
+
+            @media (max-width: 600px) {
+                .dataset-category {
+                    flex-direction: column;
+                }
+                .category-video {
+                    flex: none;
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 12px;
+                }
+            }
+
             @media (max-width: 400px) {
                 .render_window {
                     display: block;
@@ -154,19 +210,122 @@
 
             <div class="content">
                 <h4 class="title">
-                    Dataset Download
+                    Dataset Overview
                 </h4>
                 <p>
-                    Dataset parts are hosted on Zenodo:
-                    <ul>
-                        <li>HUE-City (<a href=https://zenodo.org/records/13850671>Part 1</a>, <a href=https://zenodo.org/records/13882992> Part 2</a>)</li>
-                        <li><a href=https://zenodo.org/records/13850789>HUE-Controlled</a></li>
-                        <li>HUE-Driving (<a href=https://zenodo.org/records/13850768>Part 1</a>, <a href=https://zenodo.org/records/13883000> Part 2</a>)</li>
-                        <li>HUE-Indoor (<a href=https://zenodo.org/records/13850606>Part 1</a>, <a href=https://zenodo.org/records/13883010> Part 2</a>, <a href=https://zenodo.org/records/13883013> Part 3</a>)</li>
-                        <li><a href=https://zenodo.org/records/13850750>HUE-Night</a></li>
-                        <li>HUE-Twilight (<a href=https://zenodo.org/records/13850716>Part 1</a>, <a href=https://zenodo.org/records/13883017> Part 2</a>, <a href=https://zenodo.org/records/13883020> Part 3</a>, <a href=https://zenodo.org/records/13883029> Part 4</a>)</li>
-                    </ul>
+                    The HUE dataset contains 106 sequences across 6 categories, captured in diverse low-light conditions.
+                    Dataset parts are hosted on <a href="https://zenodo.org">Zenodo</a>.
                 </p>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/indoor.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>Indoor</h5>
+                        <div class="category-stats">23 sequences &middot; 6 mins &middot; 0–3 lux</div>
+                        <p>Indoor environments dimly lit via natural or artificial light sources.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850606">Part 1</a>,
+                            <a href="https://zenodo.org/records/13883010">Part 2</a>,
+                            <a href="https://zenodo.org/records/13883013">Part 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/city.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>City</h5>
+                        <div class="category-stats">11 sequences &middot; 4 mins &middot; 0–14 lux</div>
+                        <p>Capturing cityscapes through the window of a mid-rise building.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850671">Part 1</a>,
+                            <a href="https://zenodo.org/records/13882992">Part 2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/twilight.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>Twilight</h5>
+                        <div class="category-stats">23 sequences &middot; 10 mins &middot; 0–24 lux</div>
+                        <p>Outdoors during twilight, featuring natural and urban elements.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850716">Part 1</a>,
+                            <a href="https://zenodo.org/records/13883017">Part 2</a>,
+                            <a href="https://zenodo.org/records/13883020">Part 3</a>,
+                            <a href="https://zenodo.org/records/13883029">Part 4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/night.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>Night</h5>
+                        <div class="category-stats">16 sequences &middot; 3 mins &middot; ~0 lux</div>
+                        <p>Taken in urban environments during night, with moving people, cars, etc.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850750">HUE-Night</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/driving.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>Driving</h5>
+                        <div class="category-stats">16 sequences &middot; 6 mins &middot; ~0 lux</div>
+                        <p>From the windshield of a car driving around the city in twilight and night.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850768">Part 1</a>,
+                            <a href="https://zenodo.org/records/13883000">Part 2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataset-category">
+                    <div class="category-video">
+                        <video autoplay loop muted playsinline>
+                            <source src="projects/HUE/videos/controlled.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="category-info">
+                        <h5>Controlled</h5>
+                        <div class="category-stats">17 sequences &middot; 2 mins &middot; 0–2 lux</div>
+                        <p>Same scene captured under varying lighting levels and camera settings.</p>
+                        <div class="category-download">
+                            <i class="fa fa-download"></i> Download:
+                            <a href="https://zenodo.org/records/13850789">HUE-Controlled</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="section">
                 <h4 class="title">
