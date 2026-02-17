@@ -122,6 +122,33 @@
                 font-family: 'Arvo', serif;
             }
 
+            .format-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+                font-size: 0.95em;
+            }
+            .format-table th, .format-table td {
+                text-align: left;
+                padding: 8px 12px;
+                border-bottom: 1px solid #ddd;
+            }
+            .format-table th {
+                background: #f0f0f0;
+                font-family: 'Arvo', serif;
+                font-size: 1em;
+            }
+            .format-table td:first-child {
+                white-space: nowrap;
+                font-size: 0.9em;
+            }
+            .format-table code {
+                background: #f0f0f0;
+                padding: 1px 4px;
+                border-radius: 3px;
+                font-size: 0.92em;
+            }
+
             .dataset-category {
                 display: flex;
                 align-items: center;
@@ -241,7 +268,7 @@
             </div>
 
             <div class="teaser-image">
-                <p class="content">Here we present <strong>HUE (Hacettepe University Event) Dataset</strong>, a comprehensive collection of <strong>high-resolution event and frame sequences</strong> captured in diverse and challenging <strong>low-light conditions</strong>. Our dataset offers <strong>106</strong> sequences across <strong>6</strong> categories, recorded using a hybrid RGB and event camera setup with events at 1280&times;720 and frames at 1456&times;1088 resolution. The sequences feature both static and dynamic scenes captured in indoor and outdoor environments, at various times of day, with illuminance levels ranging from 0 to 24 lux. Dataset parts are hosted on <a href="https://zenodo.org">Zenodo</a>. </p>
+                <p class="content">Here we present <strong>HUE (Hacettepe University Event) Dataset</strong>, a comprehensive collection of <strong>high-resolution event and frame sequences</strong> captured in diverse and challenging <strong>low-light conditions</strong>. Our dataset offers <strong>106</strong> sequences across <strong>6</strong> categories, recorded using a hybrid RGB and event camera setup with events at 1280&times;720 and frames at 1456&times;1088 resolution. The sequences feature both static and dynamic scenes captured in indoor and outdoor environments, at various times of day, with illuminance levels ranging from 0 to 24 lux. Dataset parts are hosted on Zenodo, with download links below.</p>
             </div>
 
             <div class="content">
@@ -359,6 +386,76 @@
                 </p>
 
             </div>
+
+            <div class="section-title"> Dataset Format </div>
+            <div class="content">
+                <p>
+                    The events in the HUE dataset are stored in a numpy memmap format, similar to that of the <a href="https://github.com/TimoStoff/event_utils/">event_utils</a> library, and compatible with <a href="https://github.com/ercanburak/EVREAL/">EVREAL</a>.
+                    Each sequence folder contains the following files:
+                </p>
+                <table class="format-table">
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>events_p.npy</code></td>
+                            <td>Event polarities.</td>
+                        </tr>
+                        <tr>
+                            <td><code>events_ts.npy</code></td>
+                            <td>Event timestamps in seconds.</td>
+                        </tr>
+                        <tr>
+                            <td><code>events_xy.npy</code></td>
+                            <td>Event (x, y) coordinates.</td>
+                        </tr>
+                        <tr>
+                            <td><code>images_ts.npy</code></td>
+                            <td>Image timestamps (midpoint of exposure).</td>
+                        </tr>
+                        <tr>
+                            <td><code>images_exp_start_ts.npy</code></td>
+                            <td>Image exposure start timestamps.</td>
+                        </tr>
+                        <tr>
+                            <td><code>images_exp_end_ts.npy</code></td>
+                            <td>Image exposure end timestamps.</td>
+                        </tr>
+                        <tr>
+                            <td><code>image_event_indices.npy</code></td>
+                            <td>For each image frame, the index of the last event at or before the image timestamp. Useful for aligning events with frames.</td>
+                        </tr>
+                        <tr>
+                            <td><code>png_images/</code></td>
+                            <td>8-bit 3-channel RGB images (1456&times;1088) captured by the frame camera, saved as PNG files (<code>rgb_00000.png</code>, <code>rgb_00001.png</code>, ...).</td>
+                        </tr>
+                        <tr>
+                            <td><code>lux_values.txt</code></td>
+                            <td>Light level (in lux) measured on the event sensor, recorded with each frame. One value per line, one per frame.</td>
+                        </tr>
+                        <tr>
+                            <td><code>metadata.json</code></td>
+                            <td>Sequence metadata, including event sensor resolution (<code>{"sensor_resolution": [720, 1280]}</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>event_camera_params.json</code></td>
+                            <td>Event camera parameters captured via Prophesee SDK (sensor info, biases, firmware version, etc.).</td>
+                        </tr>
+                        <tr>
+                            <td><code>frame_camera_params.xml</code></td>
+                            <td>Frame camera settings captured via Allied Vision Vimba SDK (exposure, gain, frame rate, etc.).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    All timestamps are in seconds, starting from 0.
+                </p>
+            </div>
+
             <div class="section">
                 <h4 class="title">
                     BibTeX
